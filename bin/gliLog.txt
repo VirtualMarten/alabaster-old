@@ -1,0 +1,75 @@
+GL Intercept Log. Version : 1.34    Compile Date: Aug 23 2016    Run on: Tue Jan 14 16:52:50 2020
+
+===================================================
+Diagnostic: Unknown function glMultiDrawArraysIndirectCount being logged.
+Diagnostic: Unknown function glMultiDrawElementsIndirectCount being logged.
+Diagnostic: Unknown function glSpecializeShader being logged.
+Diagnostic: Unknown function glSpecializeShaderARB being logged.
+Diagnostic: Unknown function glPolygonOffsetClamp being logged.
+Diagnostic: Unknown function glClearTexImageEXT being logged.
+Diagnostic: Unknown function glClearTexSubImageEXT being logged.
+Diagnostic: Unknown function glBufferStorageMemEXT being logged.
+Diagnostic: Unknown function glCreateMemoryObjectsEXT being logged.
+Diagnostic: Unknown function glDeleteMemoryObjectsEXT being logged.
+Diagnostic: Unknown function glGetMemoryObjectParameterivEXT being logged.
+Diagnostic: Unknown function glGetUnsignedBytei_vEXT being logged.
+Diagnostic: Unknown function glGetUnsignedBytevEXT being logged.
+Diagnostic: Unknown function glIsMemoryObjectEXT being logged.
+Diagnostic: Unknown function glMemoryObjectParameterivEXT being logged.
+Diagnostic: Unknown function glNamedBufferStorageMemEXT being logged.
+Diagnostic: Unknown function glTexStorageMem1DEXT being logged.
+Diagnostic: Unknown function glTexStorageMem2DEXT being logged.
+Diagnostic: Unknown function glTexStorageMem2DMultisampleEXT being logged.
+Diagnostic: Unknown function glTexStorageMem3DEXT being logged.
+Diagnostic: Unknown function glTexStorageMem3DMultisampleEXT being logged.
+Diagnostic: Unknown function glTextureStorageMem1DEXT being logged.
+Diagnostic: Unknown function glTextureStorageMem2DEXT being logged.
+Diagnostic: Unknown function glTextureStorageMem2DMultisampleEXT being logged.
+Diagnostic: Unknown function glTextureStorageMem3DEXT being logged.
+Diagnostic: Unknown function glTextureStorageMem3DMultisampleEXT being logged.
+Diagnostic: Unknown function glImportMemoryWin32HandleEXT being logged.
+Diagnostic: Unknown function glImportMemoryWin32NameEXT being logged.
+Diagnostic: Unknown function glDeleteSemaphoresEXT being logged.
+Diagnostic: Unknown function glGenSemaphoresEXT being logged.
+Diagnostic: Unknown function glGetSemaphoreParameterui64vEXT being logged.
+Diagnostic: Unknown function glIsSemaphoreEXT being logged.
+Diagnostic: Unknown function glSemaphoreParameterui64vEXT being logged.
+Diagnostic: Unknown function glSignalSemaphoreEXT being logged.
+Diagnostic: Unknown function glWaitSemaphoreEXT being logged.
+Diagnostic: Unknown function glImportSemaphoreWin32HandleEXT being logged.
+Diagnostic: Unknown function glImportSemaphoreWin32NameEXT being logged.
+Diagnostic: Unknown function glAcquireKeyedMutexWin32EXT being logged.
+Diagnostic: Unknown function glReleaseKeyedMutexWin32EXT being logged.
+Diagnostic: Unknown function glMaxShaderCompilerThreadsKHR being logged.
+Diagnostic: Unknown function glLGPUCopyImageSubDataNVX being logged.
+Diagnostic: Unknown function glLGPUInterlockNVX being logged.
+Diagnostic: Unknown function glLGPUNamedBufferSubDataNVX being logged.
+Diagnostic: Unknown function glDrawVkImageNV being logged.
+Diagnostic: Unknown function glGetVkProcAddrNV being logged.
+Diagnostic: Unknown function glSignalVkFenceNV being logged.
+Diagnostic: Unknown function glSignalVkSemaphoreNV being logged.
+Diagnostic: Unknown function glWaitVkSemaphoreNV being logged.
+Diagnostic: Unknown function glMulticastBarrierNV being logged.
+Diagnostic: Unknown function glMulticastBlitFramebufferNV being logged.
+Diagnostic: Unknown function glMulticastBufferSubDataNV being logged.
+Diagnostic: Unknown function glMulticastCopyBufferSubDataNV being logged.
+Diagnostic: Unknown function glMulticastCopyImageSubDataNV being logged.
+Diagnostic: Unknown function glMulticastFramebufferSampleLocationsfvNV being logged.
+Diagnostic: Unknown function glMulticastGetQueryObjecti64vNV being logged.
+Diagnostic: Unknown function glMulticastGetQueryObjectivNV being logged.
+Diagnostic: Unknown function glMulticastGetQueryObjectui64vNV being logged.
+Diagnostic: Unknown function glMulticastGetQueryObjectuivNV being logged.
+Diagnostic: Unknown function glMulticastWaitSyncNV being logged.
+Diagnostic: Unknown function glRenderGpuMaskNV being logged.
+Diagnostic: Unknown function glCompressedTexImage3DNV being logged.
+Diagnostic: Unknown function glCompressedTexSubImage3DNV being logged.
+Diagnostic: Unknown function glCopyTexSubImage3DNV being logged.
+Diagnostic: Unknown function glFramebufferTextureLayerNV being logged.
+Diagnostic: Unknown function glTexImage3DNV being logged.
+Diagnostic: Unknown function glTexSubImage3DNV being logged.
+ExtensionFunction::AddFunction -Unable to log function wglFreeMemoryNV exceeded 2000 num of wrapper functions
+ShaderGLSLManager::Destructor - OpenGL id 1 is still active. (ShaderGLSL Memory leak?)
+ShaderGLSLManager::Destructor - OpenGL id 2 is still active. (ShaderGLSL Memory leak?)
+ShaderGLSLManager::Destructor - OpenGL id 3 is still active. (ShaderGLSL Memory leak?)
+===================================================
+Log End.

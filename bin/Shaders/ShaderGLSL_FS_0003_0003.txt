@@ -1,0 +1,78 @@
+#version 330 core
+#define T_WRAP_X (1 << 0)
+#define T_WRAP_Y (1 << 1)
+#define T_WRAP   (T_WRAP_X | T_WRAP_Y)
+#define T_R      (1 << 2)
+#define T_RG     (1 << 3)
+#define T_RGB    (1 << 4)
+#define T_RGBA   (1 << 5)
+#define T_SMOOTH (1 << 6)
+#define T_PADDED (1 << 7)
+#define T_OPAQUE (1 << 8)
+#define T_MIPMAP (1 << 9)
+#define T_SDF    (1 << 10)
+#define T_MSDF   (1 << 11)
+#define position_layout layout(location=0)
+#define uv_layout layout(location=1)
+#define FRAGMENT
+#ifdef VERTEX
+
+position_layout in vec3 position;
+uv_layout in vec2 uv;
+out vec2 UV;
+uniform mat4 view;
+uniform mat4 projection;
+uniform mat4 model;
+uniform vec4 texrect;
+uniform int texmask;
+
+void main() {
+    UV.x = (texmask & T_WRAP_X) == 0 ? (uv.x * texrect.z + texrect.x) : uv.x;
+    UV.y = (texmask & T_WRAP_Y) == 0 ? (uv.y * texrect.w + texrect.y) : uv.y;
+    gl_Position = projection * view * model * vec4(position, 1.0);
+}
+
+#endif
+
+
+
+#ifdef FRAGMENT
+
+precision mediump float;
+
+uniform ivec4 color;
+in vec2 UV;
+out vec4 fragment;
+uniform mat4 model;
+uniform sampler2D texture0;
+uniform vec4 texrect;
+uniform int texmask;
+const vec3 erase_color = vec3(215, 0, 255) / 255.0;
+
+void main() {
+    vec4 c = color / 255.0;
+    vec2 uv = UV;
+    if ((texmask & T_WRAP_X) != 0) uv.x = fract((UV.x - texrect.x) / texrect.z) * texrect.z + texrect.x;
+    if ((texmask & T_WRAP_Y) != 0) uv.y = fract((UV.y - texrect.y) / texrect.w) * texrect.w + texrect.y;
+    if ((texmask & T_SDF) != 0) {
+        float dist = texture(texture0, uv).r;
+        float width = fwidth(dist);
+        float alpha = smoothstep(0.5 - width, 0.5 + width, dist);
+        fragment = vec4(c.rgb, alpha * c.a);
+    }
+    else {
+        if (texmask > 0) {
+            vec4 sampled = texture(texture0, uv);
+            if ((texmask & T_R) != 0) fragment = vec4(1.0, 1.0, 1.0, sampled.r) * c;
+            else if ((texmask & T_RGB) != 0) {
+                if (sampled.rgb == erase_color) discard;
+                fragment = vec4(sampled.rgb, 1.0) * c;
+            }
+            else fragment = sampled * c;
+        }
+        else fragment = c;
+    }
+    if (fragment.a == 0) discard;
+}
+
+#endif
